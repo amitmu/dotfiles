@@ -1,0 +1,81 @@
+
+set nocompatible        " Use Vim settings, rather then Vi settings (much better!).
+set packpath^=~/.vim
+
+""" Indentation
+  set cindent
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set autoindent
+  set expandtab
+  set smartindent
+  set smarttab
+
+""" Behaviour modifiers
+  set undofile
+  set undodir=~/.vim/undodir
+  set backup
+  set backupdir=~/.vim/backup/
+  set writebackup
+  set backupcopy=yes
+  set clipboard^=unnamed
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+  set foldmethod=marker
+  set backspace=indent,eol,start
+  set wildmode=longest,list,full
+  set completeopt=longest,menuone
+  set mouse=
+  set lazyredraw
+  set number
+  set numberwidth=6
+  set autoread          "autoload files modified outside vim
+  set scrolloff=5       " Keep 5 lines below and above the cursor
+  set hidden            " This makes vim act like all other editors, buffers can exist in the background without being in a window. 
+  syntax on             "turn on syntax highlighting
+  set ignorecase        "These two options, when set together, will make /-style searches case-sensitive only if there is a capital letter in the search expression.
+  set smartcase         " *-style searches continue to be consistently case-sensitive.
+
+"#### liteline settings ####
+set laststatus=2
+
+if !has('gui-running')
+  set t_Co=256
+endif
+
+set noshowmode
+"#### end liteline ####
+
+
+"#### vimwiki settings ####
+let g:vimwiki_list = [{'path': '~/.vim/vimwiki/', 'path_html': '~/.vim/vimwiki_html/'}]
+filetype plugin on
+syntax on
+"#### end vimwiki ####
+
+"#### nerdtree settings ####
+nnoremap <Leader>f :NERDTreeToggle<CR>
+nnoremap <Leader>v :NERDTreeFind<CR>
+nnoremap <C-n> :NERDTreeTabsToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen=1
+let NERDTreeChDirMode=2
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeShowHidden=1      "show hidden files by default. I to toggle.
+let g:NERDTreeDirArrowExpandable = '├'
+let g:NERDTreeDirArrowCollapsible = '└'
+let g:NERDTreeMapActivateNode = '<tab>'
+
+""autoload nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"#### end nerdtree ####
+
+""" js/ts filejumps
+  set path=.,..,src,node_modules
+  set suffixesadd=.js,.jsx,.ts,.tsx
+

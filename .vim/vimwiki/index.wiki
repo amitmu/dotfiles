@@ -1,0 +1,18 @@
+= My personal knowledge base =
+
+== Development ==
+
+
+== Web Design ==
+
+
+== Linux ==
+
+	* [[Applications]]-- I like
+	* [[Command line]]-- enhancements
+
+== Miscellaneous ==
+
+	* [[Scratchpad]] -- temporary stuff
+	* [[Links]] -- with more info
+

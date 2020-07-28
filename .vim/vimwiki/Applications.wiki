@@ -1,0 +1,36 @@
+= [[Applications]] to try on Linux =
+
+==Vim Editor==
+
+Installation: >sudo apt install vim
+
+====Addons====
+- Liteline >git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
+- Vimwiki >git clone https://github.com/vimwiki/vimwiki.git ~/.vim/pack/plugins/start/vimwiki
+- Nerdtree >git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+    
+
+==Rofi launcher==
+
+Installation: >sudo apt install rofi
+Run:  > rofi -show run
+      > rofi -show window
+
+==Rust Language with Cargo==
+
+Installation: >curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+PostInstall: add .cargo/bin to PATH in .bashrc
+
+====Addons====
+- lsd (ls replacement) >cargo install lsd
+- exa (ls replacement) >cargo install exa
+
+==Brave Browser==
+
+
+==Vivaldi Browser==
+
+
+
+
+

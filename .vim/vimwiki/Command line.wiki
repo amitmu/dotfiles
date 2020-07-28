@@ -1,0 +1,27 @@
+                    = Command line shenanigans =
+
+== Bash ==
+
+  * My [[file:~/.bashrc|.bashrc]] - custom settings
+
+=== Terminal Bling  ===
+- powerline
+- fortune
+- cowsay
+- neofetch
+- fzf
+- tilix
+
+
+== Vim ==
+
+The ultimate editor. Full of suprising shortcuts and a ton of plugins. A little difficult to get used to, but its worth it.
+
+  * [[https://vimhelp.org|Documentation & history]] - User manual, FAQ and more. Automatically updated.
+  * Plugins
+    - [[http://vimwiki.github.io|Vimwiki]] - my favourite
+    - [[http://vimawesome.com|Vimawesome]] - Comprehensive list of plugins
+ 
+ 
+ 
+ 
