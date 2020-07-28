@@ -48,3 +48,26 @@ This command copies every file in dotfiles.tmp and its subdirectories into the c
 
 At this point, your new machine has the dotfiles in the correct locations in your home directory and is tracking their history in ~/dotfiles, which is exactly the same state that your original machine was in after Step 1 of the initial setup. To allow your new machine to track changes to the dotfiles, just follow the steps you followed on your original machine, starting with Step 2.
 
+<h2>Tools used for my configs</h2>
+
+1. <b>Vim</b>
+- Liteline 
+> git clone https://github.com/~/lightline.vim ~/.vim/pack/plugins/start/lightline
+ 
+- Vimwiki 
+> git clone https://github.com/~/vimwiki.git ~/.vim/pack/plugins/start/vimwiki
+
+- Nerdtree
+> git clone https://github.com/~/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+
+2. <b>Rust</b>
+> curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+- lsd (ls replacement) 
+> cargo install lsd
+
+3. <b>Nerd Patched Fonts</b> https://github.com/ryanoasis/nerd-fonts
+
+4. <b>Powerline</b> https://github.com/powerline/powerline
+
+
