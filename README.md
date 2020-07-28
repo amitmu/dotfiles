@@ -52,13 +52,13 @@ At this point, your new machine has the dotfiles in the correct locations in you
 
 1. <b>Vim</b>
 - Liteline 
-> git clone https://github.com/~/lightline.vim ~/.vim/pack/plugins/start/lightline
+> git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
  
 - Vimwiki 
-> git clone https://github.com/~/vimwiki.git ~/.vim/pack/plugins/start/vimwiki
+> git clone https://github.com/vimwiki/vimwiki.git ~/.vim/pack/plugins/start/vimwiki
 
 - Nerdtree
-> git clone https://github.com/~/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+> git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 
 2. <b>Rust</b>
 > curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
