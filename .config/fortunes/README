@@ -1,0 +1,36 @@
+If you have the "fortune" program installed, you may want to create your own datfiles full of pithy quotes to be randomly selected from. This is easy.
+
+Step One
+Create the fortune file. This is just a flat text file, with selections separated by a percent-sign on a line of its own, as follows:
+
+"Here is a witty quote, possibly worthy of being included in my .sig file
+ someday."
+ --John Doe
+%
+"The rain in Spain falls mainly in the plains." -anon
+%
+The quick brown fox jumped over the lazy dogs.
+Note that the fortune program does not format its output, so if you want lines to wrap at some point, this is the place to do it.
+
+Step Two
+Create the dat file. Fortune doesn't actually look at the text file, it uses a hash file created from it. These are made with the "strfile" program, which should be included with fortune. The datfiles should have the same name as the original quotes file, suffixed by ".dat". The syntax is simple, given a textfile named "quotes":
+
+$> strfile quotes quotes.dat
+Step Three
+Set up a Makefile. A Makefile can automate the whole process of creating or updating the datfiles. In the same directory as your text and dat files, make a text file named "Makefile" containing the following:
+
+POSSIBLE += $(shell ls -1 | egrep -v '\.dat|README|Makefile' | sed -e 's/$$/.dat/g')
+
+all: ${POSSIBLE}
+
+%.dat : %
+        @strfile $< $@
+This will look at any file in that directory that isn't named "README", "Makefile", or that doesn't already end with ".dat". It will then run strfile on them, resulting in correspondingly named datfiles.
+
+Using It
+Now, whenever you get a new quote to add to your own fortune files, just cd to your fortune directory, edit the text file, and run "make". You will then have personal fortune datfiles that you can use with fortune, which you can use by specifying either the path to the textfile, or the directory containing all your fortunes.
+
+linmiri% fortune ~/lib/fortune
+"Throughout human history, we have been dependent on sendmail to send
+ mail. Fate, it seems, is not without a sense of irony."
+  --Frossie
