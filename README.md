@@ -25,14 +25,17 @@ dotfiles config status.showUntrackedFiles no
 
 4. Set up a remote repo to sync your dotfiles to (GitHub). 
 ```bash
-dotfiles remote add origin https://github.com/<i>your_id</i>/dotfiles.git
+dotfiles remote add origin https://github.com/<your id>/dotfiles.git
 ```
 
 5. Whenever you want to add a new dotfile to your Git repo, use your aliased Git command with your special options set.
 ```bash
-dotfiles add ~/<i>your_dotfile</i>
-....
-dotfiles commit -m "<i>your_commit_text</i>"
+dotfiles add ~/<your dotfile>
+```
+> repeat above for each new file
+
+```
+dotfiles commit -m "<your commit text>"
 dotfiles push origin master
 ```
 
@@ -44,7 +47,7 @@ To download your dotfiles onto a new machine:
 
 1. Clone your repo onto the new machine as a non-bare repository. You need a non-bare repository on the new machine since you’re trying to move the actual dotfiles (that is, the snapshot of your repo) onto the new machine, not just the history.
 ```bash
-git clone --separate-git-dir=$HOME/dotfiles.git https://github.com/<i>your_id</i>/dotfiles.git dotfiles.tmp
+git clone --separate-git-dir=$HOME/dotfiles.git https://github.com/<your id>/dotfiles.git dotfiles.tmp
 ```
 
 > --separate-git-dir tells Git that the history should live in $HOME/dotfiles.git even though the snapshot will live in dotfiles.tmp (which is just an arbitrary temporary directory that we’ll delete later once we’ve moved the dotfiles into their proper locations).
@@ -53,7 +56,7 @@ git clone --separate-git-dir=$HOME/dotfiles.git https://github.com/<i>your_id</i
 ```bash
 rsync --recursive --verbose --exclude '.git' dotfiles.tmp/ $HOME/
 ```
-> This command copies every file in dotfiles.tmp and its subdirectories into the corresponding locations in your home directory (so dotfiles.tmp/.gitconfig will be copied to ~/.gitconfig and dotfiles.tmp/.emacs.d/init.el will be copied to ~/.emacs.d/init.el, etc.).
+> This command copies every file in dotfiles.tmp and its subdirectories into the corresponding locations in your home directory (so dotfiles.tmp/.bashrc will be copied to ~/.bashrc and dotfiles.tmp/.vim/vimrc will be copied to ~/.vim/vimrc, etc.).
 
 3. Remove the temporary directory. Now that we’ve copied over the snapshot to the correct locations in your actual home directory, we can delete the old snapshot.
 ```bash
@@ -63,7 +66,7 @@ rm -rf dotfiles-tmp
 At this point, your new machine has the dotfiles in the correct locations in your home directory and is tracking their history in ~/dotfiles, which is exactly the same state that your original machine was in after Step 1 of the initial setup. To allow your new machine to track changes to the dotfiles, just follow the steps you followed on your original machine, starting with Step 2.
 
 ---
-## Tools used for my configs
+## Tools and utilities used for my configs
 
 1 [Vim Text Editor](https://github.com/vim/vim)
 
@@ -76,6 +79,7 @@ At this point, your new machine has the dotfiles in the correct locations in you
 ```bash
 git clone https://github.com/vimwiki/vimwiki.git ~/.vim/pack/plugins/start/vimwiki
 ```
+
 4 [Nerdtree](https://github.com/preservim/nerdtree.git)
 ```bash
 git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
