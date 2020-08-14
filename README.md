@@ -1,6 +1,9 @@
 # dotfiles
 This is my way of managing Linux config files across systems. YMMV.
+
 ---
+![Tux](assets/tux.png)  
+
 ## Initial setup on main machine
 
 At a high level, we’re creating a bare repo in a new directory to store the history of our dotfiles. Then we tell Git that the snapshot for that repo actually lives in your home directory, not the directory that contains the bare repo’s history (this lets us keep your dotfiles in your home directory rather than the directory that has the history). We won’t commit the entire home directory (which would take up a lot of space and probably put some important secrets on the internet), just the pieces that you want to add to version control.
@@ -40,8 +43,9 @@ dotfiles push origin master
 ```
 
 ---
+ ![Tux](assets/tux.png)
 
-## Copying your dotfiles to another machine
+## Copying your dotfiles to another linux machine
 
 To download your dotfiles onto a new machine:
 
@@ -65,8 +69,15 @@ rm -rf dotfiles-tmp
 
 At this point, your new machine has the dotfiles in the correct locations in your home directory and is tracking their history in ~/dotfiles, which is exactly the same state that your original machine was in after Step 1 of the initial setup. To allow your new machine to track changes to the dotfiles, just follow the steps you followed on your original machine, starting with Step 2.
 
----
-## Tools and utilities used for my configs
+---  
+![Win](assets/win10.png)
+
+## If your other machine is running Windows 
+
+You can replicate the vim config on a windows machine. Works with command line vim. gVim has issues. 
+
+---  
+## Tools and utilities used for my configs  
 
 1 [Vim Text Editor](https://github.com/vim/vim)
 
